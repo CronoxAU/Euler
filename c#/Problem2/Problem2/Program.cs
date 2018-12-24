@@ -34,7 +34,7 @@ namespace Problem2
                 //update the previous value
                 previous2 = previous1;
                 previous1 = current;
-                Console.WriteLine(current);
+                //Console.WriteLine(current);
                 //check if the current number is even and only include it if it is
                 if (current % 2 == 0)
                 {
