@@ -8,21 +8,47 @@ using System.Threading.Tasks;
 //Solution to Project Euler problem 1
 //Find the sum of all the multiples of 3 or 5 below 1000.
 
-namespace Problem1
+namespace Problem1NS
 {
-    class Program
+    public class Problem1Class
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            long sumThreeAndFive = sumOf3And5Multiples(1000);
-            Console.WriteLine(sumThreeAndFive);
+            
+            long result = uniqueSumOfTwoMultiples(3, 5, 1000);
+            Console.WriteLine(result);
 
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
 
-        static long sumOf3And5Multiples(long sumTo)
+        public static long uniqueSumOfTwoMultiples(long number1, long number2, long upperLimit)
+        {
+            //add the sum of the multipules of the two supplied numbers, and subtract the sum of their factor
+            return sumMultiples(number1, upperLimit) + sumMultiples(number2, upperLimit) - sumMultiples(number2 * number1, upperLimit);
+        }
+
+        //returns the sum of all multipules of baseNumber up to upperLimit
+        //only accepts positive values for baseNumber and upperLimit, returns 0 otherwise.
+        public static long sumMultiples(long baseNumber, long upperLimit)
+        {
+            long sum = 0;
+            long i;
+
+            if(baseNumber > 0 && upperLimit > 0)
+            { 
+                for (i = baseNumber; i < upperLimit; i += baseNumber)
+                {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+
+
+        //old function that is no longer used as it was too specific.
+        public static long sumOf3And5Multiples(long sumTo)
         {
             long sum = 0;
             long i;
