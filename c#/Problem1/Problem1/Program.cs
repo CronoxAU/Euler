@@ -36,7 +36,7 @@ namespace Problem1NS
             long sum = 0;
             long i;
 
-            if(baseNumber > 0 && upperLimit > 0)
+            if(baseNumber > 0 && upperLimit > 0 && baseNumber < upperLimit)
             { 
                 for (i = baseNumber; i < upperLimit; i += baseNumber)
                 {

@@ -8,7 +8,7 @@ namespace Problem2Tests
     public class Problem2UnitTest
     {
         [TestMethod]
-        public void sumEvenFibonacciReturnsExpectedResult()
+        public void sumEvenFibonacciFullResult()
         {
             //Test result for 4,000,000 ie the final solution
             // Arrange
@@ -18,64 +18,89 @@ namespace Problem2Tests
             long actual = Problem2Class.sumEvenFibonacci(upperLimit);
             // Assert
             Assert.AreEqual(expected, actual, "Results not correct for upper limit of 4,000,000");
+        }
 
-
-            //****** Sample cases *******
-            expected = 2;
-            upperLimit = 7;
-            actual = Problem2Class.sumEvenFibonacci(upperLimit);
+        //****** sample cases *******
+        [TestMethod]
+        public void sumEvenFibonacciLimit7()
+        {
+            long expected = 2;
+            long upperLimit = 7;
+            long actual = Problem2Class.sumEvenFibonacci(upperLimit);
             Assert.AreEqual(expected, actual, "Results not correct for upper limit of 7");
+        }
 
-            expected = 10;
-            upperLimit = 9;
-            actual = Problem2Class.sumEvenFibonacci(upperLimit);
+        [TestMethod]
+        public void sumEvenFibonacciLimit9()
+        {
+            long expected = 10;
+            long upperLimit = 9;
+            long actual = Problem2Class.sumEvenFibonacci(upperLimit);
             Assert.AreEqual(expected, actual, "Results not correct for upper limit of 9");
+        }
 
-            expected = 10;
-            upperLimit = 34;
-            actual = Problem2Class.sumEvenFibonacci(upperLimit);
+        [TestMethod]
+        public void sumEvenFibonacciLimit10()
+        {
+            long expected = 10;
+            long upperLimit = 34;
+            long actual = Problem2Class.sumEvenFibonacci(upperLimit);
             Assert.AreEqual(expected, actual, "Results not correct for upper limit of 34");
+        }
 
-            expected = 44;
-            upperLimit = 35;
-            actual = Problem2Class.sumEvenFibonacci(upperLimit);
-            Assert.AreEqual(expected, actual, "Results not correct for upper limit of 35");
-
-            expected = 188;
-            upperLimit = 145;
-            actual = Problem2Class.sumEvenFibonacci(upperLimit);
+        [TestMethod]
+        public void sumEvenFibonacciLimit145()
+        {
+            long expected = 188;
+            long upperLimit = 145;
+            long actual = Problem2Class.sumEvenFibonacci(upperLimit);
             Assert.AreEqual(expected, actual, "Results not correct for upper limit of 145");
+        }
 
+        //****** Edge cases *******
+        [TestMethod]
+        public void sumEvenFibonacciEdgeCaseLimitNegitive()
+        {
 
-            //****** Edge cases *******
-            //Test result for a negetive number
-            expected = 0;
-            upperLimit = -1;
-            actual = Problem2Class.sumEvenFibonacci(upperLimit);
+            long expected = 0;
+            long upperLimit = -1;
+            long actual = Problem2Class.sumEvenFibonacci(upperLimit);
             Assert.AreEqual(expected, actual, "Results not correct for upper limit of -1");
+        }
 
-            //Test result for 0
-            expected = 0;
-            upperLimit = 0;
-            actual = Problem2Class.sumEvenFibonacci(upperLimit);
+        [TestMethod]
+        public void sumEvenFibonacciEdgeCaseLimit0()
+        {
+            long expected = 0;
+            long upperLimit = 0;
+            long actual = Problem2Class.sumEvenFibonacci(upperLimit);
             Assert.AreEqual(expected, actual, "Results not correct for upper limit of 0");
+        }
 
-            //Test result for 1
-            expected = 0;
-            upperLimit = 1;
-            actual = Problem2Class.sumEvenFibonacci(upperLimit);
+        [TestMethod]
+        public void sumEvenFibonacciEdgeCaseLimit1()
+        {
+            long expected = 0;
+            long upperLimit = 1;
+            long actual = Problem2Class.sumEvenFibonacci(upperLimit);
             Assert.AreEqual(expected, actual, "Results not correct for upper limit of 1");
-            
-            //Test result for 2
-            expected = 0;
-            upperLimit = 2;
-            actual = Problem2Class.sumEvenFibonacci(upperLimit);
-            Assert.AreEqual(expected, actual, "Results not correct for upper limit of 2");
+        }
 
-            //Test result for 3
-            expected = 2;
-            upperLimit = 3;
-            actual = Problem2Class.sumEvenFibonacci(upperLimit);
+        [TestMethod]
+        public void sumEvenFibonacciEdgeCaseLimit2()
+        {
+            long expected = 0;
+            long upperLimit = 2;
+            long actual = Problem2Class.sumEvenFibonacci(upperLimit);
+            Assert.AreEqual(expected, actual, "Results not correct for upper limit of 2");
+        }
+
+        [TestMethod]
+        public void sumEvenFibonacciEdgeCaseLimit3()
+        {
+            long expected = 2;
+            long upperLimit = 3;
+            long actual = Problem2Class.sumEvenFibonacci(upperLimit);
             Assert.AreEqual(expected, actual, "Results not correct for upper limit of 3");
         }
     }
