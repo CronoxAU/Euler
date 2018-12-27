@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-//Solution to Project Euler problem 1
+//Solution to Project Euler problem 1 - https://projecteuler.net/problem=1
 //Find the sum of all the multiples of 3 or 5 below 1000.
 
 namespace Problem1NS

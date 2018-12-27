@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2AE0CB34-96EE-4D22-BF15-B33CFB8056BB}</ProjectGuid>
+    <ProjectGuid>{A232680D-B801-4CC1-A022-B02D721D7388}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Problem1Tests</RootNamespace>
-    <AssemblyName>Problem1Tests</AssemblyName>
+    <RootNamespace>Problem3Tests</RootNamespace>
+    <AssemblyName>Problem3Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -48,16 +48,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Problem1UnitTest.cs" />
+    <Compile Include="Problem3UnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Problem1\Problem1.csproj">
-      <Project>{7bcb2a0a-2580-4a3e-90d2-740c2bdfe421}</Project>
-      <Name>Problem1</Name>
+    <ProjectReference Include="..\Problem3\Problem3.csproj">
+      <Project>{e007346c-9618-4088-b741-7c716b965fac}</Project>
+      <Name>Problem3</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
