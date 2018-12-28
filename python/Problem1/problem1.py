@@ -11,6 +11,5 @@ def sumMultiples(x, upperLimit):
       sum = sum + i
   return sum
 
-
-result = uniqueSumOfTwoMultiples(3,5,1000)
-print(result)
+#result = uniqueSumOfTwoMultiples(3,5,1000)
+#print(result)

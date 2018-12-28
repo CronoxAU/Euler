@@ -38,7 +38,7 @@ namespace Problem1Tests
         }
 
         [TestMethod]
-        public void sumOfMultiplesHandlesBaseNegitive()
+        public void sumOfMultiplesHandlesBaseNegative()
         {
             long expected = 0;
             long baseNumber = -50;
@@ -48,7 +48,7 @@ namespace Problem1Tests
         }
 
         [TestMethod]
-        public void sumOfMultiplesHandlesInitalSample()
+        public void sumOfMultiplesHandlesInitialSample()
         {
             long expected = 5;
             long baseNumber = 5;
