@@ -40,7 +40,7 @@ namespace Problem2Tests
         }
 
         [TestMethod]
-        public void sumEvenFibonacciLimit10()
+        public void sumEvenFibonacciLimit34()
         {
             long expected = 10;
             long upperLimit = 34;
@@ -59,7 +59,7 @@ namespace Problem2Tests
 
         //****** Edge cases *******
         [TestMethod]
-        public void sumEvenFibonacciEdgeCaseLimitNegitive()
+        public void sumEvenFibonacciEdgeCaseLimitNegative()
         {
 
             long expected = 0;
