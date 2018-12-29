@@ -69,5 +69,14 @@ namespace Problem3Tests
             long actual = Problem3Class.largestPrimeFactor(number);
             Assert.AreEqual(expected, actual, "largestPrimeFactor - Results not correct for " + number);
         }
+
+        [TestMethod]
+        public void largestPrimeFactor600851475143Test()
+        {
+            long expected = 6857;
+            long number = 600851475143;
+            long actual = Problem3Class.largestPrimeFactor(number);
+            Assert.AreEqual(expected, actual, "largestPrimeFactor - Results not correct for " + number);
+        }
     }
 }

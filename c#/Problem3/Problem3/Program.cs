@@ -25,20 +25,35 @@ namespace Problem3NS
         //returns 0 if the number has no prime factor
         public static long largestPrimeFactor(long num)
         {
-            long primeFactor = 0;
-            //find the upper limit of values ot test
-            long upperLimit = num/2;
+            long largestPrimeFactor = 0;
+            //find the upper limit of values to test
+            //The lowest of any pair of factors for a number must be less than the square root, so only check those to cut down the search space
+            long upperLimit = (long)Math.Sqrt(num);
             for(long i = upperLimit; i > 0; i--)
             {
                 if(num % i == 0)
                 {
-                    if (isPrime(i))
+                    //only check values for "primeness" if they are potentially the largest prime factor
+                    if(i > largestPrimeFactor)
                     {
-                        return i;
+                        if (isPrime(i))
+                        {
+                            largestPrimeFactor = i;
+                        }
+                    }
+
+                    //check the other half of the factor
+                    long j = num / i;
+                    if (j > largestPrimeFactor)
+                    {
+                        if (isPrime(j))
+                        {
+                            largestPrimeFactor = j;
+                        }
                     }
                 }
             }
-            return primeFactor;
+            return largestPrimeFactor;
         }
 
         //return true if the supplied number is prime
@@ -46,10 +61,10 @@ namespace Problem3NS
         {
             if (num <= 1) return false;
             if (num % 2 == 0) return false;
-            //find the upper limit of values ot test
+            //find the upper limit of values to test
             long upperLimit = (long)Math.Sqrt(num);
-            //loop through each potential odd factor, and return false if a factor is found
-            for(long i = 3; i <= upperLimit; i+=2)
+            //loop through each potential factor and return false if a factor is found
+            for(long i = 3; i <= upperLimit; i++)
             {
                 if (num % i == 0) return false;
             }
