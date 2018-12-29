@@ -64,7 +64,8 @@ namespace Problem3NS
             //find the upper limit of values to test
             long upperLimit = (long)Math.Sqrt(num);
             //loop through each potential factor and return false if a factor is found
-            for(long i = 3; i <= upperLimit; i++)
+            //we can increment i by 2 as every skipped value will be even and thus the %2 factor check above would have matched
+            for (long i = 3; i <= upperLimit; i += 2)
             {
                 if (num % i == 0) return false;
             }

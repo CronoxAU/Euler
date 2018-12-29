@@ -53,10 +53,46 @@ namespace Problem3Tests
         }
 
         [TestMethod]
+        public void isPrime195Test()
+        {
+            Boolean expected = false;
+            long number = 195;
+            Boolean actual = Problem3Class.isPrime(number);
+            Assert.AreEqual(expected, actual, "isPrime - Results not correct for " + number);
+        }
+
+        [TestMethod]
+        public void isPrime197Test()
+        {
+            Boolean expected = true;
+            long number = 197;
+            Boolean actual = Problem3Class.isPrime(number);
+            Assert.AreEqual(expected, actual, "isPrime - Results not correct for " + number);
+        }
+
+        [TestMethod]
         public void isPrime199Test()
         {
             Boolean expected = true;
             long number = 199;
+            Boolean actual = Problem3Class.isPrime(number);
+            Assert.AreEqual(expected, actual, "isPrime - Results not correct for " + number);
+        }
+
+        [TestMethod]
+        public void isPrime6857Test()
+        {
+            Boolean expected = true;
+            long number = 6857;
+            Boolean actual = Problem3Class.isPrime(number);
+            Assert.AreEqual(expected, actual, "isPrime - Results not correct for " + number);
+        }
+
+        [TestMethod]
+        public void isPrime6859Test()
+        {
+            Boolean expected = false;
+            long number = 6859;
             Boolean actual = Problem3Class.isPrime(number);
             Assert.AreEqual(expected, actual, "isPrime - Results not correct for " + number);
         }
