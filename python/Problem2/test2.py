@@ -1,7 +1,7 @@
 import unittest
 import problem2
 
-class Test_TestProblem1(unittest.TestCase):
+class Test_TestProblem2(unittest.TestCase):
 
     def test_sumEvenFibonacci7(self):
         self.assertEqual(problem2.sumEvenFibonacci(7), 2)

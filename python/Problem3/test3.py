@@ -1,7 +1,7 @@
 import unittest
 import problem3
 
-class Test_TestProblem1(unittest.TestCase):
+class Test_TestProblem3(unittest.TestCase):
 
     def test_isPrime1(self):
         self.assertEqual(problem3.isPrime(1), False)
