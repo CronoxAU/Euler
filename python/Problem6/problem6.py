@@ -5,14 +5,20 @@ import math
 
 #returns the sum of the squares of all positive numbers, starting at 1 and ending at the supplied num (inclusive)
 def sumOfSquares(num):
-  return 0
+  sum = 0
+  for i in range(1, num+1):
+    sum += i*i
+  return sum
 
 #returns the square of the sum of all positive numbers, starting at 1 and ending at the supplied num (inclusive)
 def squareOfSums(num):
-  return 0
+  sum = 0
+  for i in range(1, num+1):
+    sum += i
+  return sum * sum
 
 def diffBetweenSquareOfSumsAndSumOfSquares(num):
   return squareOfSums(num) - sumOfSquares(num)
 
 
-print(diffBetweenSquareOfSumsAndSumOfSquares(20))
+print(diffBetweenSquareOfSumsAndSumOfSquares(100))

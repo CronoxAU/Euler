@@ -29,7 +29,7 @@ class Test_TestProblem6(unittest.TestCase):
 
     #Solution needed to complete challenge
     def test_lowestEvenlyDivisibleByAll20(self):
-        self.assertEqual(problem6.diffBetweenSquareOfSumsAndSumOfSquares(20), 0)
+        self.assertEqual(problem6.diffBetweenSquareOfSumsAndSumOfSquares(100), 25164150)
 
 
 if __name__ == '__main__':
