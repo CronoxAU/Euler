@@ -23,5 +23,5 @@ def largestPrimeFactor(num):
           largestPrimeFactor = j
   return largestPrimeFactor
 
-#result = largestPrimeFactor(600851475143)
-#print(result)
+result = largestPrimeFactor(600851475143)
+print(result)
