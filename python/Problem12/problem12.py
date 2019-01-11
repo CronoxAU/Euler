@@ -5,9 +5,9 @@ import math
 #Returns the number of divisors of the supplied num
 def getNumberOfDivisors(num):
   divisorsCount = 0
-  sqrRoot = int(math.sqrt(num))
-  for i in range(i,int(sqrRoot)):
-    if num % i = 0:
+  sqrRoot = math.sqrt(num)
+  for i in range(1,int(sqrRoot)+1):
+    if num % i == 0:
       if i == sqrRoot:
         divisorsCount += 1
       else:
@@ -15,11 +15,15 @@ def getNumberOfDivisors(num):
         divisorsCount += 2
   return divisorsCount
 
-def getTriangleNumberByDivisorCount(divisorCount):
+def getLowestTriangleNumberByNoOfDivisors(NoOfDivisors):
   resultFound = False
   triangleNumber = 1
-  while not resultFound
-    if getNumberOfDivisors(triangleNumber) >= divisorCount
+  i =  1
+  while not resultFound:
+    i += 1
+    if getNumberOfDivisors(triangleNumber) >= NoOfDivisors:
       resultFound = True
+    else:
+      triangleNumber += i
   return triangleNumber
 
