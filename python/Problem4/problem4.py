@@ -37,7 +37,7 @@ def isProductOfTwo3DigitNumbers(num):
   return False
 
 #finds the largest palindromic number, which is a product of two 3 digit numbers, below the supplied upper limit
-#returns 0 if no such number can be found
+#returns 0 if no such number can be found, only works on 6 digit numbers (ie numbers higher then 99,999)
 def findLargestPalindromeProductOfTwo3DigitNumbers(upperLimit):
   found = False
   #split the upper limit in half
