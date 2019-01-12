@@ -9,10 +9,16 @@ using System.Threading.Tasks;
 
 namespace Problem4NS
 {
-    class Problem4Class
+    public class Problem4Class
     {
         static void Main(string[] args)
-        {
+        { 
+            int result = findLargestPalindromeProductOfTwo3DigitNumbers(999 * 999);
+            Console.WriteLine(result);
+
+            // Keep the console window open in debug mode.
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
         }
 
         //reverses the supplied string
@@ -23,11 +29,12 @@ namespace Problem4NS
             return new string(arr);
         }
 
-        //return true if the supplied string is a palindrome
-        public static string makePlaindrome(string prefix)
+        //return a palindrome here the prefix is the first digits
+        public static int makePlaindrome(int prefix)
         {
-            string suffix = reverseString(prefix);
-            return prefix + suffix;
+            string strPrefix = prefix.ToString();
+            string strSuffix = reverseString(strPrefix);
+            return Int32.Parse(strPrefix + strSuffix);
         }
 
         //returns true if the supplied num is the product of 2 three digit numbers
@@ -35,9 +42,9 @@ namespace Problem4NS
         {
             int upperLimit = (int)(Math.Sqrt(num));
             Boolean result = false;
-            if(upperLimit > 1000 && upperLimit < 100)
+            if(upperLimit < 1000 && upperLimit >= 100)
             {
-                for(int i = upperLimit; i < 100; i--)
+                for(int i = upperLimit; i >= 100; i--)
                 {
                     if(num % i == 0)
                     {
@@ -53,15 +60,30 @@ namespace Problem4NS
             return result;
         }
 
-        public static int getFirstHalf(num)
+        public static int getFirstHalf(int num)
         {
-
+            string numString = num.ToString();
+            string firstHalf = (numString.Substring(0, numString.Length/2));
+            return Int32.Parse(firstHalf);
         }
 
+        //This function only works on on 6 digit numbers.
         public static int findLargestPalindromeProductOfTwo3DigitNumbers(int upperLimit)
         {
             Boolean found = false;
-            int initialFirstHalf = Int32.Parse(upperLimit.ToString().Substring(0, 5));
+            int i = 0;
+                int firstHalf = getFirstHalf(upperLimit);
+                while (!found && firstHalf > 100)
+                {
+                    i = makePlaindrome(firstHalf);
+                    if (isProductOfTwo3DigitNumbers(i))
+                    {
+                        found = true;
+                    }
+                    firstHalf--;
+                }
+            return i;
+            
         }
     }
 }
