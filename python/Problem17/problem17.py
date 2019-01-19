@@ -17,7 +17,7 @@ def toWritten(n):
     workingWritten = ""
     workingN = n%1000
     #In these groups of three the most significant digit is ignored if it is 0 and the standard term for the number is always used otherwise (one, two, three etc.) with hundred added as a suffix term
-    if workingN > 100:
+    if workingN >= 100:
       workingWritten += onesWritten[workingN//100]
       workingWritten += " hundred "
       #If the most significant digit is not 0, and there is a digit in the second or third position the term "and" should be added (eg seven hundred and twenty two)
@@ -42,9 +42,15 @@ def toWritten(n):
     thousandCount += 1
   return writtenNumber
 
+#returns the supplied string str with any spaces or hyphens removed
+def removeSpacesAndHyphens(str):
+  str = str.replace(" ", "")
+  str = str.replace("-", "")
+  return str
+
 #returns the sum of all letters in the written version of numbers between x and y, inclusive.
 def numberLetterCount(x, y):
   count = 0
   for i in range(x,y+1):
-    count += len(toWritten(i))
+    count += len(removeSpacesAndHyphens(toWritten(i)))
   return count
