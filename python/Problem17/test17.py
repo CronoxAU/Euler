@@ -6,12 +6,24 @@ class Test_TestProblem17(unittest.TestCase):
     def test_toWritten1(self):
         self.assertEqual(problem17.toWritten(1), "one")
 
+    def test_toWritten27(self):
+        self.assertEqual(problem17.toWritten(27), "twenty seven")
+
+    def test_toWritten101(self):
+        self.assertEqual(problem17.toWritten(101), "one hundred and one")
+
+    def test_toWritten1000(self):
+        self.assertEqual(problem17.toWritten(1000), "one thousand")
+
+    def test_toWritten75423(self):
+        self.assertEqual(problem17.toWritten(75423), "seventy five thousand four hundred and twenty three")
+
     def test_numberLetterCount1to5(self):
         self.assertEqual(problem17.numberLetterCount(1,5), 19)
 
     #test of full solution
     def test_numberLetterCount1to1000(self):
-        self.assertEqual(problem17.numberLetterCount(1,1000), 19)
+        self.assertEqual(problem17.numberLetterCount(1,1000), 21124)
 
 if __name__ == '__main__':
     unittest.main()
