@@ -13,6 +13,9 @@ class Test_TestProblem21(unittest.TestCase):
         self.assertEqual(problem21.getAmicablePair(220), 284)
 
     def test_getAmicablePair785(self):
+        self.assertEqual(problem21.getAmicablePair(6), 0)
+
+    def test_getAmicablePair785(self):
         self.assertEqual(problem21.getAmicablePair(785), 0)
 
     def test_getAmicablePair220(self):
@@ -26,7 +29,7 @@ class Test_TestProblem21(unittest.TestCase):
         
     #test of full solution
     def test_sumAmicableNumbers10000(self):
-        self.assertEqual(problem21.sumAmicableNumbers(10000), 0)
+        self.assertEqual(problem21.sumAmicableNumbers(10000), 31626)
 
 if __name__ == '__main__':
     unittest.main()
