@@ -24,18 +24,27 @@ class Test_TestProblem22(unittest.TestCase):
     def test_stringScoreCOLIN(self):
         self.assertEqual(problem22.stringScore('COLIN'), 53) 
 
-    def test_caclulateNameScoreTest1(self):
-        self.assertEqual(problem22.caclulateNameScore("test1.txt"), 5)
+    def test_stringScoreZeb(self):
+        self.assertEqual(problem22.stringScore('Zeb'), 33)
 
-    def test_caclulateNameScoreTest2(self):
-        self.assertEqual(problem22.caclulateNameScore("test2.txt"), 14)    
+    def test_stringScoreBen(self):
+        self.assertEqual(problem22.stringScore('ben'), 21) 
 
-    def test_caclulateNameScoreTest3(self):
-        self.assertEqual(problem22.caclulateNameScore("test3.txt"), 0)     
+    def test_stringScoreChris(self):
+        self.assertEqual(problem22.stringScore('chris'), 57) 
+
+    def test_calculateNameScoreTest1(self):
+        self.assertEqual(problem22.calculateNameScore("test1.txt"), 5)
+
+    def test_calculateNameScoreTest2(self):
+        self.assertEqual(problem22.calculateNameScore("test2.txt"), 14)    
+
+    def test_calculateNameScoreTest3(self):
+        self.assertEqual(problem22.calculateNameScore("test3.txt"), 234)     
         
     #test of full solution
-    def test_caclulateNameScoreFullTest(self):
-        self.assertEqual(problem22.caclulateNameScore("p022_names.txt"), 0)
+    def test_calculateNameScoreFullTest(self):
+        self.assertEqual(problem22.calculateNameScore("p022_names.txt"), 871198282)
 
 if __name__ == '__main__':
     unittest.main()

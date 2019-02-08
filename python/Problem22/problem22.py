@@ -9,7 +9,7 @@ def letterScore(l):
     result =  ord(l.lower()) - 96
   return result
 
-#caclulates the combines score of the letters in the supplied string s, based on their position in the aphhabet
+#calculates the combines score of the letters in the supplied string s, based on their position in the aphhabet
 # for example COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53
 def stringScore(s):
   score = 0
@@ -17,7 +17,7 @@ def stringScore(s):
     score += letterScore(c)
   return score
 
-def caclulateNameScore(file):
+def calculateNameScore(file):
   #load the file into an array
   for data in open(file):
     data = data.replace('"','')
