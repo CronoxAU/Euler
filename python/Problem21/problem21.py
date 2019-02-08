@@ -4,7 +4,7 @@
 #returns the sum of the factors of the supplied number n
 def sumOfFactors(n):
   sum = 0
-  for i in range(1,(n+1)//2):
+  for i in range(1,n//2+1):
     if n % i == 0:
       sum += i
   return sum
@@ -16,7 +16,7 @@ def getAmicablePair(n):
   potentialPair = sumOfFactors(n)
   #get the sum of the factors of the potential pair, if this equals n we have found an amicable pair, return the potential pair value
   #otherwise return 0
-  if sumOfFactors(potentialPair) == n:
+  if potentialPair != n and sumOfFactors(potentialPair) == n:
     result = potentialPair
   return result
 
