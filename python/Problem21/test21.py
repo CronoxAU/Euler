@@ -6,13 +6,16 @@ class Test_TestProblem21(unittest.TestCase):
     def test_sumOfFactors2(self):
         self.assertEqual(problem21.sumOfFactors(2), 1)
 
-    def test_sumOfFactors24(self):
+    def test_sumOfFactors4(self):
         self.assertEqual(problem21.sumOfFactors(4), 3)
 
-    def test_sumOfFactors220(self):
-        self.assertEqual(problem21.getAmicablePair(220), 284)
+    def test_sumOfFactors12(self):
+        self.assertEqual(problem21.sumOfFactors(12), 16)
 
-    def test_getAmicablePair785(self):
+    def test_sumOfFactors220(self):
+        self.assertEqual(problem21.sumOfFactors(220), 284)
+
+    def test_getAmicablePair6(self):
         self.assertEqual(problem21.getAmicablePair(6), 0)
 
     def test_getAmicablePair785(self):
