@@ -8,6 +8,8 @@
 # Calculate the sum of all numbers below the limit
 # Subreact the first sum from the second to get the needed solution
 
+import math
+
 
 # Returns the sum of all the positive integers below the supplied limit which cannot be written as the sum of two abundant numbers.
 # As all numbers above 28123 can be written as the sum of an abundant number, any limit higher than this will return the same result
@@ -15,17 +17,24 @@ def sumOfNonAbundantSums(limit):
   if limit > 28123:
     limit = 28123
   abList = generateAbundantList(limit)
-  sumList = generateListOfSums(abList, limit)
-  sumOfAbundantSums = sumList(sumList)
+  listOfSums = generateListOfSums(abList, limit)
+  sumOfAbundantSums = sumList(listOfSums)
   triangleNum = triangleNumber(limit)
   return triangleNum - sumOfAbundantSums
 
 #returns the sum of the factors of the supplied number n
 def sumOfFactors(n):
-  sum = 0
-  for i in range(1,n//2+1):
+  if n == 1:
+    return 1
+  sum = 1
+  sqrtOfN = int(math.sqrt(n))
+  #if n is a perfect square, include that as a factor
+  if(n == sqrtOfN * sqrtOfN):
+    sum += sqrtOfN
+    sqrtOfN -= 2
+  for i in range(2,sqrtOfN+1):
     if n % i == 0:
-      sum += i
+      sum += i + (n//i)
   return sum
 
 #if n is an abundant number true, otherwise false is returned

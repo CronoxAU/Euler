@@ -1,9 +1,12 @@
 import unittest
 import problem23
 
-class Test_TestProblem21(unittest.TestCase):
+class Test_TestProblem23(unittest.TestCase):
 
     # sumOfFactors function
+    def test_sumOfFactors1(self):
+        self.assertEqual(problem23.sumOfFactors(1), 1)
+
     def test_sumOfFactors2(self):
         self.assertEqual(problem23.sumOfFactors(2), 1)
 
@@ -25,7 +28,10 @@ class Test_TestProblem21(unittest.TestCase):
         self.assertEqual(problem23.isSumFromList(1,[0,4,5,6]), False)
 
 
-    # isAbundant function
+    # isSumFromList function
+    def test_isSumFromList3(self):
+        self.assertEqual(problem23.isSumFromList(3,[0,4,5,6]), False)  
+
     def test_isSumFromList9(self):
         self.assertEqual(problem23.isSumFromList(9,[0,4,5,6]), True)  
 
@@ -70,7 +76,7 @@ class Test_TestProblem21(unittest.TestCase):
 
     #test of full solution
     def test_sumOfNonAbundantSums28123(self):
-        self.assertEqual(problem23.sumOfNonAbundantSums(28123), 0)
+        self.assertEqual(problem23.sumOfNonAbundantSums(28123), 4179871)
 
 if __name__ == '__main__':
     unittest.main()
