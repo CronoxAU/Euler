@@ -16,6 +16,9 @@ class Test_TestProblem23(unittest.TestCase):
     def test_sumOfFactors12(self):
         self.assertEqual(problem23.sumOfFactors(12), 16)
 
+    def test_sumOfFactors25(self):
+        self.assertEqual(problem23.sumOfFactors(25), 6)
+
 
     # isAbundant function
     def test_isAbundant4(self):
@@ -26,6 +29,13 @@ class Test_TestProblem23(unittest.TestCase):
 
     def test_isAbundant1(self):
         self.assertEqual(problem23.isSumFromList(1,[0,4,5,6]), False)
+
+    # canBeWrittenAsSum Function
+    def test_canBeWrittenAsSum3(self):
+        self.assertEqual(problem23.canBeWrittenAsSum([1,1,2,3,11,15],3), [0,0,1,1])
+
+    def test_canBeWrittenAsSum10(self):
+        self.assertEqual(problem23.canBeWrittenAsSum([1,1,2,3,11,15],10), [0,0,1,1,1,1,1,0,0,0,0])
 
 
     # isSumFromList function
@@ -46,7 +56,6 @@ class Test_TestProblem23(unittest.TestCase):
     def test_generateListOfSums(self):
         self.assertEqual(problem23.generateListOfSums([1,2,3],7), [2,3,4,5,6])
 
-    # Test the limit
     def test_generateListOfSumsLimit(self):
         self.assertEqual(problem23.generateListOfSums([1,2,3],3), [2,3])
 
@@ -73,6 +82,15 @@ class Test_TestProblem23(unittest.TestCase):
     # sumOfNonAbundantSums function 
     def test_sumOfNonAbundantSums11(self):
         self.assertEqual(problem23.sumOfNonAbundantSums(11), 66)
+
+    def test_sumOfNonAbundantSums200(self):
+        self.assertEqual(problem23.sumOfNonAbundantSums(200), 10266)
+
+    def test_sumOfNonAbundantSums2000(self):
+        self.assertEqual(problem23.sumOfNonAbundantSums(2000), 573153)
+
+    def test_sumOfNonAbundantSums10000(self):
+        self.assertEqual(problem23.sumOfNonAbundantSums(10000), 3731004)
 
     #test of full solution
     def test_sumOfNonAbundantSums28123(self):
