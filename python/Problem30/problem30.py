@@ -18,10 +18,13 @@ def isSumOfMthPowers(n,m):
 # returns the sum of all numbers which are the sum of each of their digits raised to the mth power
 def sumOfAllMthPower(m):
     sum = 0
-    # need to find a way to define limits correctly
+    # To find a lose upper limit calculate the 9^m, then multiply that by it's number of digits. 
+    # After this upper limit no numbers will sum high enough as even if every digit is 9 the sum will be lower than itself.
+    singleDigitLimit = 9 ** m
+    limit = (singleDigitLimit * len(str(singleDigitLimit))) + 1
 
     #as per the definition of the problem start at 2 because 1 is excluded.
-    for i in range(2, 100000):
+    for i in range(2, limit):
         if isSumOfMthPowers(i,m):
             sum += i
     return sum
