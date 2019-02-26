@@ -80,3 +80,20 @@ def numberOfWaysToMakeNPounds(n):
             count += 1
             break
     return count
+
+
+# Consolidated the above code into a more elegant solution.
+# The logic used is the same but hopefully this is eaeir to follow
+def numberOfWaysToMakeNPoundsV2(n):
+    # work in pence it avoid issues with rounding
+    nPence = int(n *100)
+    count = 0
+    for iP2 in range(nPence,-1, -200):
+        for iP1 in range(iP2,-1,-100):
+            for ip50 in range(iP1,-1,-50):
+                for ip20 in range(ip50,-1,-20):
+                    for ip10 in range(ip20,-1,-10):
+                        for ip5 in range(ip10,-1,-5):
+                            for ip2 in range(ip5,-1,-2):
+                                count += 1
+    return count
